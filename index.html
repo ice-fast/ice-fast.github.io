@@ -206,44 +206,64 @@
 <h2 id="数据结构（data-structure）"><a href="#数据结构（data-structure）" class="headerlink" title="数据结构（data structure）"></a>数据结构（data structure）</h2><p>1.怎样使用（存储）数据</p>
 <p>2.底层操作（如链表增删查改）</p>
 <p>3.算法</p>
-<h1 id="数据结构对比表格"><a href="#数据结构对比表格" class="headerlink" title="数据结构对比表格"></a>数据结构对比表格</h1><table>
+<h1 id="三种符号"><a href="#三种符号" class="headerlink" title="三种符号"></a>三种符号</h1><h2 id="1-O"><a href="#1-O" class="headerlink" title="1.O &lt;&#x3D;"></a>1.O &lt;&#x3D;</h2><h2 id="2-o"><a href="#2-o" class="headerlink" title="2.o  &lt;"></a>2.o  &lt;</h2><p>(logn)^a&#x3D;o(n^b) </p>
+<p>a,b为正数</p>
+<h2 id="3-θ"><a href="#3-θ" class="headerlink" title="3.θ  &#x3D;"></a>3.θ  &#x3D;</h2><p>斯大林近似：n! ~ √2πn(n&#x2F;e)ⁿ</p>
+<p>两边同取对数</p>
+<p>则 log(n!) &#x3D; θ(nlogn)</p>
+<h1 id="具体数据结构"><a href="#具体数据结构" class="headerlink" title="具体数据结构"></a>具体数据结构</h1><h2 id="栈（stack）"><a href="#栈（stack）" class="headerlink" title="栈（stack）"></a>栈（stack）</h2><h3 id="实现形式"><a href="#实现形式" class="headerlink" title="实现形式"></a>实现形式</h3><h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h3 id="主要操作"><a href="#主要操作" class="headerlink" title="主要操作"></a>主要操作</h3><p>栈只能对最后一位加入的数据进行操作，后进后出，即从最后插入以及删除最新插入的一个数据。</p>
+<h4 id="push"><a href="#push" class="headerlink" title="push"></a>push</h4><p>常数时间（constant time）</p>
+<h4 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h4><p>常数时间（constant time）</p>
+<h3 id="具体应用"><a href="#具体应用" class="headerlink" title="具体应用"></a>具体应用</h3><h4 id="平衡符号"><a href="#平衡符号" class="headerlink" title="平衡符号"></a>平衡符号</h4><p>在IDE中时常要对于成对符号的缺失进行错误检查与警告。</p>
+<p>遇到开放符号（如“（”，“【”等）推入栈。遇到封闭符号（如“）”，“】”等）时，若是空栈，则报错；若不是，则弹出符号。若到末尾不是空栈，则报错。</p>
+<h4 id="后缀表达式"><a href="#后缀表达式" class="headerlink" title="后缀表达式"></a>后缀表达式</h4><h5 id="后缀表达式计算"><a href="#后缀表达式计算" class="headerlink" title="后缀表达式计算"></a>后缀表达式计算</h5><p>遇到数字，推入栈，遇到计算符号，弹出两个数字计算，将计算结果推入栈。</p>
+<h5 id="将中缀表达式（正常表达式）转化为后缀"><a href="#将中缀表达式（正常表达式）转化为后缀" class="headerlink" title="将中缀表达式（正常表达式）转化为后缀"></a>将中缀表达式（正常表达式）转化为后缀</h5><p>数字全部直接输出，遇到计算符号，若是空栈，则入栈；若此计算符号优先级大于top计算符号（如“(” &gt; “*” &gt; “+”）则入栈；若小于，则top出栈，此进栈；若等于，则弹出top，此入栈；”(“在遇到”)”之前其中所有符号不出栈，遇到之后弹出两个计算符号之间所有计算符号。</p>
+<h4 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h4><h1 id="数据结构对比表格"><a href="#数据结构对比表格" class="headerlink" title="数据结构对比表格"></a>数据结构对比表格</h1><table>
 <thead>
 <tr>
 <th></th>
 <th align="center">insert_first</th>
-<th>delete_first</th>
-<th>insert_last</th>
-<th>delete_last</th>
-<th>insert_at</th>
-<th>delete_at</th>
+<th align="center">delete_first</th>
+<th align="center">insert_last</th>
+<th align="center">delete_last</th>
+<th align="right">insert_at</th>
+<th align="center">delete_at</th>
+<th align="center">set_at</th>
+<th align="center">find_at</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>静态数组</td>
 <td align="center">O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(n)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n)</td>
+<td align="right">O(n)</td>
+<td align="center">O(n)</td>
+<td align="center">O(1)</td>
+<td align="center">O(1)</td>
 </tr>
 <tr>
 <td>链表</td>
 <td align="center">O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
+<td align="center">O(1)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n)</td>
+<td align="right">O(n)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n)</td>
 </tr>
 <tr>
 <td>动态数组</td>
 <td align="center">O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(n)</td>
+<td align="center">O(n)</td>
+<td align="center">O(1)</td>
+<td align="center">O(1)</td>
+<td align="right">O(n)</td>
+<td align="center">O(n)</td>
+<td align="center">O(1)</td>
+<td align="center">O(1)</td>
 </tr>
 </tbody></table>
 
@@ -290,7 +310,7 @@
         
         <span class="tag">
             
-            <a href="/tags/error/" style="color: #00a596">error</a>
+            <a href="/tags/error/" style="color: #03a9f4">error</a>
         </span>
         
     </div>
@@ -330,7 +350,7 @@
         
         <span class="tag">
             
-            <a href="/tags/essay/" style="color: #ff7d73">essay</a>
+            <a href="/tags/essay/" style="color: #ffa2c4">essay</a>
         </span>
         
     </div>
