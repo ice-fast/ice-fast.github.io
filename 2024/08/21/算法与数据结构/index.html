@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>代码大全随记 | frezzing fridge</title>
+    <title>算法与数据结构 | frezzing fridge</title>
     <meta name="author" content="John Doe" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -156,41 +156,68 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>代码大全随记</h1>
+        <h1>算法与数据结构</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/8/12
+            2024/8/21
         </span>
         
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/essay/" style="color: #03a9f4">
-                    essay
-                </a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>刚转完专业来到计算机系，对于本系的同学已经落后了几乎一年的课程，于是心急火燎地想要赶上进度，正好刷到一位名为“数字游牧人”的up主</p>
-<p>，<span id="more"></span>他推荐了一些外网的路线图以及名为《代码大全2》的一本书（原本想要硬啃英文版，但是考虑到效率太低，遂决定去youtube上听网课练英文），出于对其视频质量的肯定以及对其计算机能力的向往，我决定好好读读这一本书。</p>
-<hr>
-<h4 id="ps-以下是对《代码大全2》的一些随记以及自己的理解"><a href="#ps-以下是对《代码大全2》的一些随记以及自己的理解" class="headerlink" title="ps:以下是对《代码大全2》的一些随记以及自己的理解"></a>ps:以下是对《代码大全2》的一些随记以及自己的理解</h4><hr>
-<h5 id="1-隐喻"><a href="#1-隐喻" class="headerlink" title="1.隐喻"></a>1.隐喻</h5><p>一个好的隐喻可以帮助人们通过熟悉的事物来增进对于陌生事物的理解，不论是从编程来说，还是从现实世界的其他事物来讲。其书中将编程的过程隐喻为盖房子的确是让人眼前一亮，不论是提前规划蓝图的软件设计与软件架构，还是类比于承重墙的重要的类，以及对于门的细节的类似的应隐藏的复杂度等等，都让我有更进一步的理解。</p>
-<h5 id="2-前期准备"><a href="#2-前期准备" class="headerlink" title="2.前期准备"></a>2.前期准备</h5><p>前期准备十分重要，提前在设计中确定客户真正想要的功能，对重要的功能做好安全的保障，发现谬误，可以极大避免代码阶段的成本巨大的修改，（书上统计了代码及以后阶段对于修正谬误等的成本是设计以及架构阶段的数十倍甚至百倍）也可以对大致的实现功能的类与子程序做好规划，从而也可以控制好复杂度之类的。就像是隐喻中的盖房子一样，在蓝图阶段移动一面墙10cm可比建好之后移动一面墙10cm要来的容易得多。而对于不慎了解的老板和程序员同事，也可以用隐喻的方式来解释，感觉更容易理解（大概）。</p>
+        <span id="more"></span>
+
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><h2 id="接口（interface）"><a href="#接口（interface）" class="headerlink" title="接口（interface）"></a>接口（interface）</h2><p>1.能使用数据做什么</p>
+<p>2.抽象，不去关注底层操作</p>
+<p>3.类似于黑盒子，输入-&gt;黑盒子-&gt;输出</p>
+<h2 id="数据结构（data-structure）"><a href="#数据结构（data-structure）" class="headerlink" title="数据结构（data structure）"></a>数据结构（data structure）</h2><p>1.怎样使用（存储）数据</p>
+<p>2.底层操作（如链表增删查改）</p>
+<p>3.算法</p>
+<h1 id="数据结构对比表格"><a href="#数据结构对比表格" class="headerlink" title="数据结构对比表格"></a>数据结构对比表格</h1><table>
+<thead>
+<tr>
+<th></th>
+<th align="center">insert_first</th>
+<th>delete_first</th>
+<th>insert_last</th>
+<th>delete_last</th>
+<th>insert_at</th>
+<th>delete_at</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>静态数组</td>
+<td align="center">O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>链表</td>
+<td align="center">O(1)</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>动态数组</td>
+<td align="center">O(n)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
 
     </div>
     
