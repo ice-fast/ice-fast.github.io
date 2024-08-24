@@ -211,14 +211,45 @@
 <h2 id="3-θ"><a href="#3-θ" class="headerlink" title="3.θ  &#x3D;"></a>3.θ  &#x3D;</h2><p>斯大林近似：n! ~ √2πn(n&#x2F;e)ⁿ</p>
 <p>两边同取对数</p>
 <p>则 log(n!) &#x3D; θ(nlogn)</p>
-<h1 id="具体数据结构"><a href="#具体数据结构" class="headerlink" title="具体数据结构"></a>具体数据结构</h1><h2 id="栈（stack）"><a href="#栈（stack）" class="headerlink" title="栈（stack）"></a>栈（stack）</h2><h3 id="实现形式"><a href="#实现形式" class="headerlink" title="实现形式"></a>实现形式</h3><h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h3 id="主要操作"><a href="#主要操作" class="headerlink" title="主要操作"></a>主要操作</h3><p>栈只能对最后一位加入的数据进行操作，后进后出，即从最后插入以及删除最新插入的一个数据。</p>
+<h1 id="具体数据结构"><a href="#具体数据结构" class="headerlink" title="具体数据结构"></a>具体数据结构</h1><h2 id="栈（stack）"><a href="#栈（stack）" class="headerlink" title="栈（stack）"></a>栈（stack）</h2><p>表</p>
+<h3 id="实现形式"><a href="#实现形式" class="headerlink" title="实现形式"></a>实现形式</h3><h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    ElementType Element;</span><br><span class="line">    PtrToNode Next;<span class="comment">//此处数据类型为预处理声明了为指向该结构体的指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">StackRecord</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> Capacity;</span><br><span class="line">    <span class="type">int</span> TopOfStack;<span class="comment">//通过改变top位置进行处理，免去创建新数组</span></span><br><span class="line">    ElementType *Array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="主要操作"><a href="#主要操作" class="headerlink" title="主要操作"></a>主要操作</h3><p>栈只能对最后一位加入的数据进行操作，后进后出，即从最后插入以及删除最新插入的一个数据。</p>
 <h4 id="push"><a href="#push" class="headerlink" title="push"></a>push</h4><p>常数时间（constant time）</p>
 <h4 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h4><p>常数时间（constant time）</p>
 <h3 id="具体应用"><a href="#具体应用" class="headerlink" title="具体应用"></a>具体应用</h3><h4 id="平衡符号"><a href="#平衡符号" class="headerlink" title="平衡符号"></a>平衡符号</h4><p>在IDE中时常要对于成对符号的缺失进行错误检查与警告。</p>
 <p>遇到开放符号（如“（”，“【”等）推入栈。遇到封闭符号（如“）”，“】”等）时，若是空栈，则报错；若不是，则弹出符号。若到末尾不是空栈，则报错。</p>
 <h4 id="后缀表达式"><a href="#后缀表达式" class="headerlink" title="后缀表达式"></a>后缀表达式</h4><h5 id="后缀表达式计算"><a href="#后缀表达式计算" class="headerlink" title="后缀表达式计算"></a>后缀表达式计算</h5><p>遇到数字，推入栈，遇到计算符号，弹出两个数字计算，将计算结果推入栈。</p>
 <h5 id="将中缀表达式（正常表达式）转化为后缀"><a href="#将中缀表达式（正常表达式）转化为后缀" class="headerlink" title="将中缀表达式（正常表达式）转化为后缀"></a>将中缀表达式（正常表达式）转化为后缀</h5><p>数字全部直接输出，遇到计算符号，若是空栈，则入栈；若此计算符号优先级大于top计算符号（如“(” &gt; “*” &gt; “+”）则入栈；若小于，则top出栈，此进栈；若等于，则弹出top，此入栈；”(“在遇到”)”之前其中所有符号不出栈，遇到之后弹出两个计算符号之间所有计算符号。</p>
-<h4 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h4><h1 id="数据结构对比表格"><a href="#数据结构对比表格" class="headerlink" title="数据结构对比表格"></a>数据结构对比表格</h1><table>
+<h4 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h4><p>主要阐述了一些栈溢出问题</p>
+<h2 id="队列（queue）"><a href="#队列（queue）" class="headerlink" title="队列（queue）"></a>队列（queue）</h2><p>表</p>
+<h3 id="实现形式-1"><a href="#实现形式-1" class="headerlink" title="实现形式"></a>实现形式</h3><h4 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Queuerecord</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> Capacity;<span class="comment">//值</span></span><br><span class="line">    <span class="type">int</span> Front;<span class="comment">//前方的（头部）</span></span><br><span class="line">    <span class="type">int</span> Rear;<span class="comment">//后方的（尾部）</span></span><br><span class="line">    <span class="type">int</span> Size;<span class="comment">//队列中元素数量</span></span><br><span class="line">    ElementType *Array; <span class="comment">//可改变的想要的数据类型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在循环队列中，当Rear&#x3D;Front-1,即为空队列。</p>
+<h3 id="主要操作-1"><a href="#主要操作-1" class="headerlink" title="主要操作"></a>主要操作</h3><p>前出后进</p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="排队"><a href="#排队" class="headerlink" title="排队"></a>排队</h4><h4 id="打印机……"><a href="#打印机……" class="headerlink" title="打印机……"></a>打印机……</h4><h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h3 id="实现形式-2"><a href="#实现形式-2" class="headerlink" title="实现形式"></a>实现形式</h3><h4 id="链表-1"><a href="#链表-1" class="headerlink" title="链表"></a>链表</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">TreeNode</span> *PtrToNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TreeNode</span></span><br><span class="line">&#123;</span><br><span class="line">    ElementType Element;</span><br><span class="line">    PtrToNode FirstChild;</span><br><span class="line">    PtrToNode NextSibling;<span class="comment">//指向下一个兄弟</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由firstchild开始遍历所有兄弟子树</p>
+<p>ps:记得初始化的时候要把没有的兄弟和子树赋值为Null</p>
+<h3 id="主要操作-2"><a href="#主要操作-2" class="headerlink" title="主要操作"></a>主要操作</h3><h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><h5 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h5><h5 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h5><h5 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h5><h3 id="应用-1"><a href="#应用-1" class="headerlink" title="应用"></a>应用</h3><h4 id="遍历文件"><a href="#遍历文件" class="headerlink" title="遍历文件"></a>遍历文件</h4><h2 id="二叉树（Binary-Search-Tree）"><a href="#二叉树（Binary-Search-Tree）" class="headerlink" title="二叉树（Binary Search Tree）"></a>二叉树（Binary Search Tree）</h2><p>平均深度O(√N)</p>
+<h3 id="实现形式-3"><a href="#实现形式-3" class="headerlink" title="实现形式"></a>实现形式</h3><h4 id="链表-2"><a href="#链表-2" class="headerlink" title="链表"></a>链表</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">TreeNode</span> *PtrToNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">PtrToNode</span> Tree;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TreeNode</span></span><br><span class="line">&#123;</span><br><span class="line">    ElementType Element;</span><br><span class="line">    Tree 		Left;</span><br><span class="line">    Tree		Right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>记得赋值Null</p>
+<h3 id="主要操作-3"><a href="#主要操作-3" class="headerlink" title="主要操作"></a>主要操作</h3><h3 id="应用-2"><a href="#应用-2" class="headerlink" title="应用"></a>应用</h3><h4 id="表达式树"><a href="#表达式树" class="headerlink" title="表达式树"></a>表达式树</h4><p>将中缀表达式转化为后缀表达式</p>
+<p>运用栈，遇到运算符前，将指向数的指针压入栈；遇到运算符后，将最后的两个指针弹出，压入该运算符指针，并使该运算符指针指向两个指针。直到最后栈中只剩下一个根（root）指针为止。</p>
+<h2 id="查找树ADT——二叉查找树"><a href="#查找树ADT——二叉查找树" class="headerlink" title="查找树ADT——二叉查找树"></a>查找树ADT——二叉查找树</h2><p>平均深度O(logN)</p>
+<h3 id="实现形式-4"><a href="#实现形式-4" class="headerlink" title="实现形式"></a>实现形式</h3><h4 id="链表-3"><a href="#链表-3" class="headerlink" title="链表"></a>链表</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">TreeNode</span> *Position;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">TreeNode</span> *SearchTree;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TreeNode</span></span><br><span class="line">&#123;</span><br><span class="line">    ElementType Element;</span><br><span class="line">    Tree 		Left;</span><br><span class="line">    Tree		Right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="主要操作-4"><a href="#主要操作-4" class="headerlink" title="主要操作"></a>主要操作</h3><h4 id="MakeEmpty"><a href="#MakeEmpty" class="headerlink" title="MakeEmpty"></a>MakeEmpty</h4><h4 id="Find"><a href="#Find" class="headerlink" title="Find"></a>Find</h4><h4 id="FindMin和FindMax"><a href="#FindMin和FindMax" class="headerlink" title="FindMin和FindMax"></a>FindMin和FindMax</h4><h4 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h4><h4 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h4><h5 id="删除节点为树叶-没有子树"><a href="#删除节点为树叶-没有子树" class="headerlink" title="删除节点为树叶(没有子树)"></a>删除节点为树叶(没有子树)</h5><p>直接删</p>
+<h5 id="有单子树"><a href="#有单子树" class="headerlink" title="有单子树"></a>有单子树</h5><p>直接把子树接上</p>
+<h5 id="有两个子树"><a href="#有两个子树" class="headerlink" title="有两个子树"></a>有两个子树</h5><p>使用左子树中最右的树叶或者右子树中最左的树叶替换</p>
+<h3 id="应用-3"><a href="#应用-3" class="headerlink" title="应用"></a>应用</h3><h1 id="数据结构对比表格"><a href="#数据结构对比表格" class="headerlink" title="数据结构对比表格"></a>数据结构对比表格</h1><table>
 <thead>
 <tr>
 <th></th>
@@ -310,7 +341,7 @@
         
         <span class="tag">
             
-            <a href="/tags/error/" style="color: #03a9f4">error</a>
+            <a href="/tags/error/" style="color: #00a596">error</a>
         </span>
         
     </div>
@@ -350,7 +381,7 @@
         
         <span class="tag">
             
-            <a href="/tags/essay/" style="color: #ffa2c4">essay</a>
+            <a href="/tags/essay/" style="color: #00bcd4">essay</a>
         </span>
         
     </div>
