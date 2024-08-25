@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>代码大全随记 | frezzing fridge</title>
+    <title>操作系统 | frezzing fridge</title>
     <meta name="author" content="John Doe" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -156,41 +156,32 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>代码大全随记</h1>
+        <h1>操作系统</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/8/12
+            2024/8/25
         </span>
         
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/essay/" style="color: #00a596">
-                    essay
-                </a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>刚转完专业来到计算机系，对于本系的同学已经落后了几乎一年的课程，于是心急火燎地想要赶上进度，正好刷到一位名为“数字游牧人”的up主</p>
-<p>，<span id="more"></span>他推荐了一些外网的路线图以及名为《代码大全2》的一本书（原本想要硬啃英文版，但是考虑到效率太低，遂决定去youtube上听网课练英文），出于对其视频质量的肯定以及对其计算机能力的向往，我决定好好读读这一本书。</p>
-<hr>
-<h4 id="ps-以下是对《代码大全2》的一些随记以及自己的理解"><a href="#ps-以下是对《代码大全2》的一些随记以及自己的理解" class="headerlink" title="ps:以下是对《代码大全2》的一些随记以及自己的理解"></a>ps:以下是对《代码大全2》的一些随记以及自己的理解</h4><hr>
-<h5 id="1-隐喻"><a href="#1-隐喻" class="headerlink" title="1.隐喻"></a>1.隐喻</h5><p>一个好的隐喻可以帮助人们通过熟悉的事物来增进对于陌生事物的理解，不论是从编程来说，还是从现实世界的其他事物来讲。其书中将编程的过程隐喻为盖房子的确是让人眼前一亮，不论是提前规划蓝图的软件设计与软件架构，还是类比于承重墙的重要的类，以及对于门的细节的类似的应隐藏的复杂度等等，都让我有更进一步的理解。</p>
-<h5 id="2-前期准备"><a href="#2-前期准备" class="headerlink" title="2.前期准备"></a>2.前期准备</h5><p>前期准备十分重要，提前在设计中确定客户真正想要的功能，对重要的功能做好安全的保障，发现谬误，可以极大避免代码阶段的成本巨大的修改，（书上统计了代码及以后阶段对于修正谬误等的成本是设计以及架构阶段的数十倍甚至百倍）也可以对大致的实现功能的类与子程序做好规划，从而也可以控制好复杂度之类的。就像是隐喻中的盖房子一样，在蓝图阶段移动一面墙10cm可比建好之后移动一面墙10cm要来的容易得多。而对于不慎了解的老板和程序员同事，也可以用隐喻的方式来解释，感觉更容易理解（大概）。</p>
+        <h1 id="第一章：计算机系统漫游"><a href="#第一章：计算机系统漫游" class="headerlink" title="第一章：计算机系统漫游"></a>第一章：计算机系统漫游</h1><p>一个文件中全部可以用ASCII码表示的文件叫做<u>文本文件</u>，而剩余的文件叫做二进制文件。</p>
+<h2 id="编译系统"><a href="#编译系统" class="headerlink" title="编译系统"></a>编译系统</h2><p>一个用c语言编写的 hello.c 文件在编译系统中会经历四个阶段</p>
+<h3 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h3><p>对文件中的#内容进行处理，如#include&lt;stdio.h&gt;,就是读取头文件stdio.h中的内容，并插入到文本程序中</p>
+<p>hello.c-&gt;hello.i</p>
+<h3 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h3><p>将其他部分翻译转化为汇编语言</p>
+<p>汇编语言十分重要，它为多个语言提供了一个通用的输出语言</p>
+<p>hello.i-&gt;hello.s</p>
+<h3 id="汇编器"><a href="#汇编器" class="headerlink" title="汇编器"></a>汇编器</h3><p>将汇编语言翻译转化为机器语言,打包成叫做 可重定位目标程序 的格式</p>
+<p>hello.s-&gt;hello.o</p>
+<h3 id="链接器"><a href="#链接器" class="headerlink" title="链接器"></a>链接器</h3><p>最后将c语言中的标准库中提供的函数等链接进来</p>
+<p>成为可执行目标文件</p>
+<p>hello.o-&gt;hello</p>
 
     </div>
     
