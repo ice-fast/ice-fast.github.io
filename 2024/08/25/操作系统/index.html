@@ -171,6 +171,8 @@
     
     <div class="content" v-pre>
         <h1 id="第一章：计算机系统漫游"><a href="#第一章：计算机系统漫游" class="headerlink" title="第一章：计算机系统漫游"></a>第一章：计算机系统漫游</h1><p>一个文件中全部可以用ASCII码表示的文件叫做<u>文本文件</u>，而剩余的文件叫做二进制文件。</p>
+<span id="more"></span>
+
 <h2 id="编译系统"><a href="#编译系统" class="headerlink" title="编译系统"></a>编译系统</h2><p>一个用c语言编写的 hello.c 文件在编译系统中会经历四个阶段</p>
 <h3 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h3><p>对文件中的#内容进行处理，如#include&lt;stdio.h&gt;,就是读取头文件stdio.h中的内容，并插入到文本程序中</p>
 <p>hello.c-&gt;hello.i</p>
@@ -182,7 +184,23 @@
 <h3 id="链接器"><a href="#链接器" class="headerlink" title="链接器"></a>链接器</h3><p>最后将c语言中的标准库中提供的函数等链接进来</p>
 <p>成为可执行目标文件</p>
 <p>hello.o-&gt;hello</p>
-
+<h2 id="计算机硬件"><a href="#计算机硬件" class="headerlink" title="计算机硬件"></a>计算机硬件</h2><h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p>传递信息字节用。大多机器字长大多为4个字节或者8个字节</p>
+<h3 id="I-O设备"><a href="#I-O设备" class="headerlink" title="I&#x2F;O设备"></a>I&#x2F;O设备</h3><p>即输入输出设备，如键盘，鼠标等为输入设备，而显示器等为输出设备。</p>
+<p>I&#x2F;O设备要依靠控制器或适配器与总线相连。控制器为主板（主硬质电路板）上的芯片组或者I&#x2F;O设备本身，适配器为插在主板插槽上的卡。</p>
+<h3 id="处理器-CPU"><a href="#处理器-CPU" class="headerlink" title="处理器(CPU)"></a>处理器(CPU)</h3><p>包含寄存器（一个字长大小），算数逻辑单元（ALU），连接的总线，以及程序计数器（PC）(指向某条机器语言指令)。</p>
+<h3 id="主存"><a href="#主存" class="headerlink" title="主存"></a>主存</h3><p>由一组动态随机存取存储器（DRAM）组成。为临时存储设备，可视为一组线性数组</p>
+<h3 id="高速缓存-cache"><a href="#高速缓存-cache" class="headerlink" title="高速缓存(cache)"></a>高速缓存(cache)</h3><p>由于从磁盘调用数据以及从主存调用数据的消耗比从寄存器的调用大得多，于是高速缓存设计出来帮助存储可能会被调用的数据，以此降低消耗。</p>
+<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p>网络也可以被视为一个I&#x2F;O设备，通过与总线相连，来向其他电脑传递信息</p>
+<h2 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h2><p>可将操作系统视作应用程序和硬件之间的一层软件。</p>
+<p>其两个基本功能</p>
+<p>1.防止硬件被失控的应用程序滥用</p>
+<p>2.向应用程序提供简单一致的机制来控制复杂而大不相同的低级硬件</p>
+<p>其将硬件之间进行了几个层级的抽象</p>
+<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>可视作一串字节</p>
+<h3 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h3><p>提供假象，好像就只有这一个程序在占用主存</p>
+<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>提供假象，好像就只有这一个程序在运行</p>
+<p><img src="C:\Users\86181\AppData\Roaming\Typora\typora-user-images\image-20240827103957135.png" alt="image-20240827103957135"></p>
+<h1 id="第二章：信息的表示和处理"><a href="#第二章：信息的表示和处理" class="headerlink" title="第二章：信息的表示和处理"></a>第二章：信息的表示和处理</h1>
     </div>
     
     
